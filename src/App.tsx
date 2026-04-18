@@ -19,10 +19,12 @@ import CartPage from './pages/CartPage';
 import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
+  const basename = import.meta.env.PROD ? '/ecommerce-base-fe' : '/';
+  
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
+      <Router basename={basename}>
         <AuthProvider>
           <ProductProvider>
             <AdminProvider>
